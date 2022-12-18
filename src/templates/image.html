@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CreateHub Imagine</title>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/favicon/white/favicon.ico') }}">
+        <style>
+            /* Establecemos el fondo de la página en negro */
+            body {
+                overflow: hidden;
+                background-color: black;
+            }
+
+            /* Hacemos que la imagen ocupe toda la pantalla */
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                /* Inicialmente la imagen está oculta */
+                opacity: 0;
+
+                /* Agregamos una transición al cambiar de imagen */
+                transition: opacity 3s ease-in-out;
+            }
+        </style>
+        <script>
+            // Cuando se carga la página, mostramos la imagen con un efecto de desvanecimiento
+            window.addEventListener('load', function() {
+                document.querySelector('img').style.opacity = 1;
+            });
+
+            // Recargamos la página cada 5 minutos para que se muestre una nueva imagen
+            setInterval(function() {
+                location.reload();
+            // 1 minuto = 60000 milisegundos
+            }, 60000); 
+        </script>
+    </head>
+    <body>
+        <a href="/image/{{ id_image }}" target="_blank">  <!-- se agrega el atributo target -->
+        <img src="data:image/png;base64, {{ image_qr }}" alt="Generated image">
+        </a>
+    </body>
+</html>

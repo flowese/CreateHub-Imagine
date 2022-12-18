@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CreateHub Imagine</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/favicon/white/favicon.ico') }}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/landing.css') }}"
+    />
+  </head>
+  <body>
+    <div class="logo-container">
+      <img
+        src="{{ url_for('static', filename='imgs/logo_wide.png') }}"
+        class="logo-container"
+      />
+    </div>
+    <div class="container">
+      <div class="card">
+        <img
+          src="data:image/png;base64,{{ image_data }}"
+          alt="Generated image"
+        />
+        <p>{{ prompt }}</p>
+        <div class="button-container">
+          <a
+            id="download-button"
+            href="data:image/png;base64,{{ image_data }}"
+            download
+            >DESCARGAR</a
+          >
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div>
+        <a href="https://github.com/flowese">
+          <img
+            src="https://badgen.net/badge/icon/GitHub?icon=github&label"
+            alt="@flowese"
+          />
+        </a>
+        &nbsp;Written by @flowese
+      </div>
+    </footer>
+  </body>
+</html>
