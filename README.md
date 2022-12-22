@@ -27,7 +27,7 @@ git clone https://github.com/flowese/CreateHub-Imagine.git
 <br>
 Once cloned, install the requirements from the `requirements.txt` file with the following command:
 <br>
-```bash
+```python
 pip install -r requirements.txt
 ```
 <br>
