@@ -68,4 +68,4 @@ This project is licensed under the MIT license. For more information, see the [L
 <br>
 
 ### Author
-This project has been developed by [@flowese]('https://github.com/flowese').
+Developed by [@flowese]('https://github.com/flowese').
