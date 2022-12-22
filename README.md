@@ -1,15 +1,54 @@
-# (PENDIENTE)
+![create_logo](https://github.com/flowese/CreateHub-Imagine/blob/main/src/static/imgs/logo_wide.png?raw=true)
 
-# Setup
-## Requirements
-* Python 3.10.8
+# CreateHub-Imagine
+
+This is the repository of the CreateHub-Imagine web application, it generates beautiful images with artificial intelligence that can be used as a presentation and images on a TV or digital photo frame among other supports.
+
+Simply open a browser once the application is launched at the url http://localhost:5081/imagine
+
+### Features
+A queue is used to store the generated images and a thread is used to continually generate new images in the background. In addition, it has a small statistics panel to see the status of the server.
+
+✅ Generate images with StableDiffusion.
+✅ QR codes for each image.
+✅ Web application to display images generated.
+✅ Page for each image with download link.
+✅ Minimal stats page to see the status of the server.
 
 
-```python
-
-from hubspain import generate
 
 
-generate("test")
+### Installation and execution
 
+To clone this repository, use the following command:
+
+```bash
+git clone https://github.com/flowese/CreateHub-Imagine.git
 ```
+
+Once cloned, install the requirements from the `requirements.txt` file with the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+To launch the app, run the following command:
+
+```bash
+python src/app.py
+```
+
+The main path where images are displayed is http://localhost:5081/imagine
+
+Each image has a unique identifier, which can be seen by scanning the QR code or clicking on the image. By clicking on the image or scanning the QR, you will be redirected to the image page where it can be downloaded.
+
+There is a mini server status dashboard available at http://localhost:5081/imagine/stats
+
+### Requirements
+In order to run the application, it is necessary to have Python 3.8 or higher installed.
+
+### License
+This project is licensed under the MIT license. For more information, see the [LICENSE]('https://github.com/flowese/CreateHub-Imagine/blob/main/LICENSE') file.
+
+### Author
+This project has been developed by [@flowese]('https://github.com/flowese').
