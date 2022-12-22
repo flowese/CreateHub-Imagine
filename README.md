@@ -5,9 +5,9 @@ This is the repository of the CreateHub-Imagine web application, it generates be
 
 Simply open a browser once the application is launched at the url http://localhost:5081/imagine
 <br>
-Minimal stats panel: https://crate.hubspain.com/imagine/stats
+🟢 See live APP: https://create.hubspain.com/imagine
 <br>
-Live production APP: https://create.hubspain.com/imagine
+🟢 See live Minimal Stats Panel: https://crate.hubspain.com/imagine/stats
 <br>
 ## Features
 A queue is used to store the generated images and a thread is used to continually generate new images in the background. In addition, it has a small statistics panel to see the status of the server.
