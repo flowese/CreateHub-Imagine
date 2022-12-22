@@ -19,6 +19,10 @@ A queue is used to store the generated images and a thread is used to continuall
 ✅ Page for each image with download link.<br>
 ✅ Minimal stats page to see the status of the server.<br>
 
+### Requirements
+In order to run the application, it is necessary to have Python 3.8 or higher installed.
+<br>
+
 ## Installation and execution
 To clone this repository, use the following command:
 
@@ -57,10 +61,6 @@ The main path where images are displayed is: http://localhost:5081/imagine
 Each image has a unique identifier, which can be seen by scanning the QR code or clicking on the image. By clicking on the image or scanning the QR, you will be redirected to the image page where it can be downloaded.
 <br>
 There is a mini server status dashboard available at: http://localhost:5081/imagine/stats
-<br>
-
-### Requirements
-In order to run the application, it is necessary to have Python 3.8 or higher installed.
 <br>
 
 ### License
