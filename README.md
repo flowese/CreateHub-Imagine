@@ -1,6 +1,6 @@
 ![create_logo](https://github.com/flowese/CreateHub-Imagine/blob/main/src/static/imgs/logo_wide.png?raw=true)
 
-# CreateHub-Imagine
+# CH-Imagine
 This is the repository of the CreateHub-Imagine web application, it generates beautiful images with artificial intelligence that can be used as a presentation and images on a TV or digital photo frame among other supports.
 
 Simply open a browser once the application is launched at the url http://localhost:5081/imagine
