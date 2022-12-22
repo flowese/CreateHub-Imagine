@@ -8,6 +8,7 @@ This is the repository of the CreateHub-Imagine web application, it generates be
 <br>
 🟢 See live Minimal Stats Panel: https://crate.hubspain.com/imagine/stats
 <br><br>
+
 ## Features
 A queue is used to store the generated images and a thread is used to continually generate new images in the background. In addition, it has a small statistics panel to see the status of the server.
 <br>
@@ -40,11 +41,13 @@ To run the application, use the following command:
 python3 src/app.py
 ```
 <br>
+
 ## Configuration
 The configuration of the application is done through the `.env` file, in this file you can change the following parameters:
 
 ```bash
-.env file
+ON_PRODUCTION = False # If True, the application will be run in production server mode
+HSP_APIKEY = "HUBSPAIN_APIKEY"
 ```
 <br>
 
@@ -55,11 +58,14 @@ Each image has a unique identifier, which can be seen by scanning the QR code or
 <br>
 There is a mini server status dashboard available at http://localhost:5081/imagine/stats
 <br>
+
 ### Requirements
 In order to run the application, it is necessary to have Python 3.8 or higher installed.
 <br>
+
 ### License
 This project is licensed under the MIT license. For more information, see the [LICENSE]('https://github.com/flowese/CreateHub-Imagine/blob/main/LICENSE') file.
 <br>
+
 ### Author
 This project has been developed by [@flowese]('https://github.com/flowese').
