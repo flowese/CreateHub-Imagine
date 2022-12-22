@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CreateHub Imagine: 404</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/flowese/CreateHub-Imagine/075a6d9b335b7689dda0272f84caf596777b426f/src/static/imgs/favicon/white/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+    body {
+      background-color: #000;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: 400;
+      display: inline
+    }
+
+    .logo-container {
+      display: flex;
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2%;
+      padding-bottom: 2%
+    }
+
+    .logo-container img {
+      display: block;
+      margin: 0 auto;
+      width: 90%
+    }
+
+    .error-container {
+      display: flex;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2%;
+      padding-bottom: 2%
+    }
+
+    .error-card {
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+      transition: all .3s ease-in-out
+    }
+
+    .error-image {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: rgb(0 0 0 / 15%) 0 4px 15px;
+      transition: all .3s ease-in-out
+    }
+
+    .error-message {
+      color: #000;
+      margin: 2.5% auto;
+      max-width: 100%;
+      background-color: rgba(0, 0, 0, .01);
+      border: 1px solid rgba(0, 0, 0, .1);
+      border-radius: 8px;
+      padding: 2% 2%;
+      box-shadow: rgb(0 0 0 / 15%) 0 4px 15px;
+      font-weight: 700;
+      font-size: 24px;
+      text-align: center
+    }
+    
+    /* Definimos los estilos para las clases de los botones */
+    .download-button {
+      text-align: center;
+      font-size: 30px;
+      border-radius: 8px;
+      background-color: #bc0303aa;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.2s;
+    }
+
+    .download-button:hover {
+      background-color: #b30000;
+
+    }
+
+    .footer {
+      text-align: center;
+      color: #fff
+    }
+
+    .footer div {
+      margin: 0 auto;
+      display: inline-flex;
+      padding-bottom: 2%;
+      padding-top: 2%
+    }
+
+    @media (max-width:500px) {
+      body {
+        font-size: 14px
+      }
+
+      .error-message {
+        font-size: 20px
+      }
+
+      .error-image {
+        width: 80%
+      }
+
+      .footer div {
+        margin: 5% auto !important
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="logo-container">
+      <img src="https://raw.githubusercontent.com/flowese/CreateHub-Imagine/075a6d9b335b7689dda0272f84caf596777b426f/src/static/imgs/logo_wide.png" alt="Logo">
+    </div>
+    <div class="error-container">
+      <div class="error-card">
+        <img src="https://s.wildapricot.net/StaticImages/v136/Common/default-blogpost.png" alt="Error 404: Página no encontrada" class="error-image">
+        <div class="error-message">Lo siento, la página que buscas no se encuentra disponible</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>
+        <!-- Agregamos las clases a los botones -->
+        <button class="download-button" onclick="goToCreatePaint()">Volver</button>
+      </div>
+    </div>
+    <script>
+      function goToCreatePaint() {
+        window.location.href = 'https://create.hubspain.com/imagine';
+      }
+    </script>
+  </body>
+</html>

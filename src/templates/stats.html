@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Estadísticas</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/flowese/CreateHub-Imagine/075a6d9b335b7689dda0272f84caf596777b426f/src/static/imgs/favicon/white/favicon.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin-top: 5%;
+        background-color: black;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+      }
+      .logo-container {
+        display: flex;
+        max-width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2%;
+        padding-bottom: 2%;
+      }
+
+      .logo-container img {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      .card {
+        display: flex; /* Establece la propiedad "display" en "flex" para dividir el elemento "card" en dos columnas flexibles */
+        align-items: center; /* Alinea los elementos de lista a nivel de centro */
+        text-align: left !important;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 20px auto; /* Establece margen superior e inferior a 20px y margen izquierdo y derecho a auto */
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        width: 50%;
+      }
+
+      .card ul {
+        list-style: none; /* Oculta los símbolos de lista predeterminados */
+        margin: 0; /* Elimina los márgenes predeterminados de la lista */
+        padding: 0; /* Elimina los rellenos predeterminados de la lista */
+      }
+
+      .card ul li::before {
+        content: ""; /* Añade un símbolo "·" al principio de cada elemento de lista */
+      }
+
+      .footer {
+        text-align: center;
+        color: white;
+      }
+
+      .footer div {
+        margin: 0 auto;
+        display: inline-flex;
+        padding-bottom: 2%;
+        padding-top: 2%;
+      }
+      @media screen and (max-width: 500px) {
+        body {
+          margin-top: 15%;
+        }
+        .logo-container {
+          display: flex;
+          max-width: 80%;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 2%;
+          padding-bottom: 2%;
+        }
+
+        .logo-container img {
+          display: block;
+          margin: 0 auto;
+          width: 90%;
+        }
+        .card ul li {
+          font-size: 12px;
+          }
+        .card {
+          width: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo-container">
+      <img
+        src="https://raw.githubusercontent.com/flowese/CreateHub-Imagine/075a6d9b335b7689dda0272f84caf596777b426f/src/static/imgs/logo_wide.png"
+        class="logo-container"
+      />
+    </div>
+    <div class="card">
+      <ul>
+        <li>🔋Fecha de inicio: {{ stats.start_time }}</li>
+        <li>🏆Generadas desde inicio: {{ stats.total_images }}</li>
+        <li>🖼️Última generación: {{ stats.last_timestamp }}</li>
+        <li>📤Tamaño de la cola: {{ stats.current_queue_size }}</li>
+        <li>📡Imágenes servidas: {{ stats.total_served }}</li>
+      </ul>
+    </div>
+    <footer class="footer">
+      <div>
+        <a href="https://github.com/flowese">
+          <img
+            src="https://badgen.net/badge/icon/GitHub?icon=github&label"
+            alt="@flowese"
+          />
+        </a>
+        &nbsp;Written by @flowese
+      </div>
+    </footer>
+    <script>
+      setInterval(function () {
+        location.reload();
+      }, 5000);
+    </script>
+  </body>
+</html>
