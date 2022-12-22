@@ -6,7 +6,7 @@ This is the repository of the CreateHub-Imagine web application, it generates be
 <br><br>
 🟢 See live APP: https://create.hubspain.com/imagine
 <br>
-🟢 See live Minimal Stats Panel: https://crate.hubspain.com/imagine/stats
+🟢 See live Minimal Stats Panel: https://create.hubspain.com/imagine/stats
 <br><br>
 
 ## Features
