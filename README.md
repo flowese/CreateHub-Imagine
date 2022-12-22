@@ -21,21 +21,32 @@ A queue is used to store the generated images and a thread is used to continuall
 ## Installation and execution
 To clone this repository, use the following command:
 
-```bash
-git clone https://github.com/flowese/CreateHub-Imagine.git
-```
+    ```bash
+    git clone https://github.com/flowese/CreateHub-Imagine.git
+    ```
 <br>
 Once cloned, install the requirements from the `requirements.txt` file with the following command:
 <br>
-```python
-pip install -r requirements.txt
-```
+    
+    ```bash
+    pip install -r requirements.txt
+    ```
 <br>
-To launch the app, run the following command:
+To run the application, use the following command:
 <br>
-```bash
-python src/app.py
-```
+
+    ```bash
+    python3 app.py
+    ```
+<br>
+## Configuration
+The configuration of the application is done through the `.env` file, in this file you can change the following parameters:
+
+    ```bash
+    python3 app.py
+    ```
+<br>
+
 <br>
 The main path where images are displayed is http://localhost:5081/imagine
 <br>
