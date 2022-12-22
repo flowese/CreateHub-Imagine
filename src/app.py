@@ -20,7 +20,6 @@ image_count = 0
 total_served = 0
 start_time = time.time()
 start_time = datetime.datetime.fromtimestamp(start_time).strftime("%Y-%m-%d %H:%M:%S")
-live_clients = []
 sleep_mode = False
 num_loaded_prompts = 0
 
@@ -61,10 +60,11 @@ def generate_image():
                 queue.put(image_data)
             time.sleep(3)
         else:
-            queue.get()
             sleep_mode = True
-            # sleep 30 minutes
-            time.sleep(1800)
+            # delete 10 images from queue
+            for i in range(10):
+                queue.get()
+            time.sleep(3)
 
 def draw_qr_code(image, id_image):
     size = image.size
@@ -85,19 +85,9 @@ def draw_qr_code(image, id_image):
     img_draw.bitmap((corner_x - 255, corner_y - 250), img)
     return image
 
-def get_current_clients():
-    global live_clients
-    # añade la ip del cliente a la lista de clientes
-    if request.remote_addr not in live_clients:
-        live_clients.append(request.remote_addr)
-    # elimina las ips de los clientes que no están conectados
-    for i, ip in enumerate(live_clients):
-        if ip not in request.access_route:
-            live_clients.pop(i)
 
 @app.route("/imagine")
 def show_image():
-    get_current_clients()
     global total_served
     total_served += 1
     if queue.empty():
@@ -115,7 +105,6 @@ def show_image():
 
 @app.route("/image/<id_image>")
 def show_unprocessed_image(id_image):
-    get_current_clients()
     found = False
     for i, image in enumerate(queue.queue):
         if image['id_image'] == id_image:
@@ -149,8 +138,6 @@ def show_stats():
             "total_images": "Recopilando datos...",
             "current_queue_size": "Recopilando datos...",
             "last_timestamp": "Recopilando datos...",
-            "live_clients": len(live_clients),
-            "live_clients_list": live_clients,
             "sleep_mode": sleeper,
         }
         
@@ -167,8 +154,6 @@ def show_stats():
             "total_images": image_count,
             "current_queue_size": queue.qsize(),
             "last_timestamp": last_timestamp_image,
-            "live_clients": len(live_clients),
-            "live_clients_list": live_clients,
             "sleep_mode": sleeper,
         }
         return render_template("stats.html", stats=stats)
