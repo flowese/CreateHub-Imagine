@@ -28,23 +28,23 @@ git clone https://github.com/flowese/CreateHub-Imagine.git
 Once cloned, install the requirements from the `requirements.txt` file with the following command:
 <br>
     
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 <br>
 To run the application, use the following command:
 <br>
 
-    ```bash
-    python3 app.py
-    ```
+```bash
+python3 app.py
+```
 <br>
 ## Configuration
 The configuration of the application is done through the `.env` file, in this file you can change the following parameters:
 
-    ```bash
-    python3 app.py
-    ```
+```bash
+python3 app.py
+```
 <br>
 
 <br>
