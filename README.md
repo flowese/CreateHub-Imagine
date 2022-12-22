@@ -21,9 +21,9 @@ A queue is used to store the generated images and a thread is used to continuall
 ## Installation and execution
 To clone this repository, use the following command:
 
-    ```bash
-    git clone https://github.com/flowese/CreateHub-Imagine.git
-    ```
+```bash
+git clone https://github.com/flowese/CreateHub-Imagine.git
+```
 <br>
 Once cloned, install the requirements from the `requirements.txt` file with the following command:
 <br>
