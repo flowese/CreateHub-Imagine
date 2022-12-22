@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 dotenv.load_dotenv(dotenv.find_dotenv())
 ON_PRODUCTION = os.getenv("ON_PRODUCTION")
+PRODUCTION_URL = os.getenv("PRODUCTION_URL")
+DEVELOPMENT_URL = os.getenv("DEVELOPMENT_URL")
 hsp_apikey = os.getenv("HSP_APIKEY")
 queue = Queue()
 timestamp = datetime.datetime.now()
@@ -19,10 +21,13 @@ total_served = 0
 start_time = time.time()
 start_time = datetime.datetime.fromtimestamp(start_time).strftime("%Y-%m-%d %H:%M:%S")
 live_clients = []
+sleep_mode = False
 
 def generate_image():
     while True:
+        global sleep_mode
         if queue.qsize() < 101:
+            sleep_mode = False
             with open('src/static/data/prompts.txt', 'r', encoding='utf-8') as f:
                 PROMPT_LIST = f.readlines()
             selected_prompt = random.choice(PROMPT_LIST)
@@ -53,6 +58,9 @@ def generate_image():
             time.sleep(3)
         else:
             queue.get()
+            sleep_mode = True
+            # sleep 30 minutes
+            time.sleep(1800)
 
 def draw_qr_code(image, id_image):
     size = image.size
@@ -62,9 +70,9 @@ def draw_qr_code(image, id_image):
         box_size=6, 
         border=2)
     if ON_PRODUCTION:
-        qr.add_data(f"https://create.hubspain.com/image/{id_image}")
+        qr.add_data(f"{PRODUCTION_URL}/image/{id_image}")
     else:
-        qr.add_data(f"https://localhost/image/{id_image}")
+        qr.add_data(f"{DEVELOPMENT_URL}/image/{id_image}")
     qr.make(fit=True)
     img = qr.make_image(back_color="white", fill_color="black")
     img_draw = ImageDraw.Draw(image)
@@ -125,21 +133,28 @@ def show_unprocessed_image(id_image):
 
 @app.route("/imagine/stats")
 def show_stats():
+    if sleep_mode:
+        sleeper = "Activo"
+    else:
+        sleeper = "No activo"
     if queue.empty():
         stats = {
             "start_time": start_time,
-            "total_served": "Aún no hay datos",
-            "total_images": "Aún no hay datos",
-            "current_queue_size": "Aún no hay datos",
-            "last_timestamp": "Aún no hay datos",
+            "total_served": "Recopilando datos...",
+            "total_images": "Recopilando datos...",
+            "current_queue_size": "Recopilando datos...",
+            "last_timestamp": "Recopilando datos...",
             "live_clients": len(live_clients),
             "live_clients_list": live_clients,
+            "sleep_mode": sleeper,
         }
         
         return render_template("stats.html", stats=stats)
     else:
         imade_data = queue.queue[-1]
         last_timestamp_image = imade_data['timestamp']
+        last_timestamp_image = last_timestamp_image[:-3]
+        last_timestamp_image = last_timestamp_image[-5:]
         stats = {
             "start_time": start_time,
             "total_served": total_served,
@@ -148,6 +163,7 @@ def show_stats():
             "last_timestamp": last_timestamp_image,
             "live_clients": len(live_clients),
             "live_clients_list": live_clients,
+            "sleep_mode": sleeper,
         }
         return render_template("stats.html", stats=stats)
 
@@ -159,5 +175,4 @@ if __name__ == "__main__":
         app.run(host="0.0.0.0", port=5081)
     except KeyboardInterrupt:
         thread_generate_image.join()
-        thread_get_current_clients.join()
         print("Exiting")
