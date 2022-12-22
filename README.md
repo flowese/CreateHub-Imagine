@@ -7,7 +7,7 @@ This is the repository of the CreateHub-Imagine web application, it generates be
 🟢 See live APP: https://create.hubspain.com/imagine
 <br>
 🟢 See live Minimal Stats Panel: https://crate.hubspain.com/imagine/stats
-<br>
+<br><br>
 ## Features
 A queue is used to store the generated images and a thread is used to continually generate new images in the background. In addition, it has a small statistics panel to see the status of the server.
 <br>
@@ -29,6 +29,7 @@ Once cloned, install the requirements from the `requirements.txt` file with the 
 <br>
     
 ```bash
+cd CreateHub-Imagine
 pip install -r requirements.txt
 ```
 <br>
@@ -36,14 +37,14 @@ To run the application, use the following command:
 <br>
 
 ```bash
-python3 app.py
+python3 src/app.py
 ```
 <br>
 ## Configuration
 The configuration of the application is done through the `.env` file, in this file you can change the following parameters:
 
 ```bash
-python3 app.py
+.env file
 ```
 <br>
 
