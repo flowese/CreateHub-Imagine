@@ -3,7 +3,7 @@
 # CH-Imagine
 This is the repository of the CreateHub-Imagine web application, it generates beautiful images with artificial intelligence that can be used as a presentation and images on a TV or digital photo frame among other supports.
 
-<br>
+<br><br>
 🟢 See live APP: https://create.hubspain.com/imagine
 <br>
 🟢 See live Minimal Stats Panel: https://create.hubspain.com/imagine/stats
@@ -52,11 +52,11 @@ HSP_APIKEY = "HUBSPAIN_APIKEY"
 <br>
 
 <br>
-The main path where images are displayed is http://localhost:5081/imagine
+The main path where images are displayed is: http://localhost:5081/imagine
 <br>
 Each image has a unique identifier, which can be seen by scanning the QR code or clicking on the image. By clicking on the image or scanning the QR, you will be redirected to the image page where it can be downloaded.
 <br>
-There is a mini server status dashboard available at http://localhost:5081/imagine/stats
+There is a mini server status dashboard available at: http://localhost:5081/imagine/stats
 <br>
 
 ### Requirements
