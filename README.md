@@ -9,12 +9,11 @@ Simply open a browser once the application is launched at the url http://localho
 A queue is used to store the generated images and a thread is used to continually generate new images in the background. In addition, it has a small statistics panel to see the status of the server.
 <br>
 
-✅ Generate images with StableDiffusion.
-✅ QR codes for each image.
-✅ Web application to display images generated.
-✅ Page for each image with download link.
-✅ Minimal stats page to see the status of the server.
-<br>
+✅ Generate images with StableDiffusion.<br>
+✅ QR codes for each image.<br>
+✅ Web application to display images generated.<br>
+✅ Page for each image with download link.<br>
+✅ Minimal stats page to see the status of the server.<br>
 
 ## Installation and execution
 To clone this repository, use the following command:
