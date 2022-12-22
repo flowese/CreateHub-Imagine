@@ -22,6 +22,7 @@ start_time = time.time()
 start_time = datetime.datetime.fromtimestamp(start_time).strftime("%Y-%m-%d %H:%M:%S")
 live_clients = []
 sleep_mode = False
+num_loaded_prompts = 0
 
 def generate_image():
     while True:
@@ -30,6 +31,9 @@ def generate_image():
             sleep_mode = False
             with open('src/static/data/prompts.txt', 'r', encoding='utf-8') as f:
                 PROMPT_LIST = f.readlines()
+                # count prompts
+                global num_loaded_prompts
+                num_loaded_prompts = len(PROMPT_LIST)
             selected_prompt = random.choice(PROMPT_LIST)
             with open('src/static/data/submit_dict.json', 'r') as fp:
                 submit_dict = json.load(fp)
@@ -140,6 +144,7 @@ def show_stats():
     if queue.empty():
         stats = {
             "start_time": start_time,
+            "num_loaded_prompts": num_loaded_prompts,
             "total_served": "Recopilando datos...",
             "total_images": "Recopilando datos...",
             "current_queue_size": "Recopilando datos...",
@@ -157,6 +162,7 @@ def show_stats():
         last_timestamp_image = last_timestamp_image[-5:]
         stats = {
             "start_time": start_time,
+            "num_loaded_prompts": num_loaded_prompts,
             "total_served": total_served,
             "total_images": image_count,
             "current_queue_size": queue.qsize(),
